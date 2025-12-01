@@ -277,3 +277,42 @@ footer {
     max-width: 300px;
   }
 }
+/* BOUTON BURGER */
+.burger {
+  display: none; /* caché sur PC */
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* RESPONSIVE MOBILE */
+@media (max-width: 768px) {
+  nav .links {
+    display: none; /* on cache le menu classique */
+    flex-direction: column;
+    gap: 15px;
+    background: rgba(15,15,15,0.95);
+    position: absolute;
+    top: 70px;
+    right: 10%;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .burger {
+    display: flex; /* visible sur mobile */
+  }
+
+  /* Affichage quand actif */
+  .links.active {
+    display: flex;
+  }
+}
