@@ -11,7 +11,7 @@ body {
   color: #f5f5f5;
 }
 
-/* NAV */
+/* NAVIGATION */
 nav {
   position: fixed;
   top: 0;
@@ -42,23 +42,23 @@ nav a {
 
 /* HERO */
 .hero {
-  height: 100vh;
+  height: 85vh; /* hauteur sur PC */
   background:
     linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
     url("images/restaurant.png") center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 80px;
+  padding-top: 120px; /* espace navbar */
 }
 
 .overlay {
   background: rgba(0,0,0,0.6);
-  padding: 50px;
+  padding: 40px;
   text-align: center;
   border-radius: 20px;
-  animation: fade 1.5s ease;
   max-width: 90%;
+  animation: fade 1.5s ease;
 }
 
 .overlay h1 {
@@ -73,13 +73,18 @@ nav a {
 
 .btn {
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 15px;
   padding: 12px 30px;
   background: #d4af37;
   color: black;
   text-decoration: none;
   border-radius: 30px;
   font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
 }
 
 /* SECTIONS */
@@ -93,7 +98,7 @@ h2 {
   margin-bottom: 25px;
 }
 
-/* MENU */
+/* MENU / PLATS */
 .plats {
   display: flex;
   justify-content: center;
@@ -136,6 +141,12 @@ h2 {
 .infos,
 .temoignages {
   background: #141414;
+}
+
+.temoignages .avis p {
+  margin: 20px 0;
+  font-style: italic;
+  line-height: 1.6;
 }
 
 /* CONTACT */
@@ -193,7 +204,7 @@ button {
   font-weight: bold;
 }
 
-/* CTA */
+/* CTA RÉSERVATION */
 .cta-reservation {
   background: #141414;
   padding: 60px 10%;
@@ -218,9 +229,9 @@ footer {
   to {opacity: 1; transform: translateY(0);}
 }
 
-/* ✅ RESPONSIVE MOBILE */
+/* RESPONSIVE MOBILE */
 @media (max-width: 768px) {
-
+  /* NAVBAR */
   nav {
     flex-direction: column;
     gap: 10px;
@@ -232,30 +243,37 @@ footer {
     gap: 10px;
   }
 
+  /* HERO */
   .hero {
-    height: 70vh;
-    padding: 20px;
+    height: 60vh; /* moins haut sur téléphone */
+    padding-top: 100px;
+  }
+
+  .overlay {
+    padding: 25px;
   }
 
   .overlay h1 {
-    font-size: 1.9rem;
+    font-size: 1.8rem;
   }
 
   .overlay p {
     font-size: 1rem;
   }
 
+  .btn {
+    font-size: 0.95rem;
+    padding: 10px 25px;
+  }
+
+  /* SECTIONS */
   section {
     padding: 60px 6%;
   }
 
+  /* MENU CARDS */
   .plat {
     width: 90%;
     max-width: 300px;
-  }
-
-  .btn {
-    font-size: 0.95rem;
-    padding: 12px 25px;
   }
 }
